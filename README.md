@@ -1,5 +1,8 @@
 # terraform-aws-ecr-image
 
+[//]: # (BEGIN_TF_DOCS)
+Creates an ECR repository and pushes a container image using local bash scripts.
+
 ## Pre-requisites
 
 The following programs must be available on the `PATH` to be able to run the local scripts:
@@ -10,9 +13,6 @@ The following programs must be available on the `PATH` to be able to run the loc
 - `find`
 - `sort`
 - `md5sum`
-
-[//]: # (BEGIN_TF_DOCS)
-Creates an ECR repository and pushes a container image using local bash scripts.
 
 ## Usage
 

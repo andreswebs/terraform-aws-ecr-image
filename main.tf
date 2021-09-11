@@ -1,5 +1,16 @@
 /**
 * Creates an ECR repository and pushes a container image using local bash scripts.
+*
+* ## Pre-requisites
+*
+* The following programs must be available on the `PATH` to be able to run the local scripts:
+* 
+* - `bash`
+* - `docker`
+* - `aws`
+* - `find`
+* - `sort`
+* - `md5sum`
 */
 
 terraform {
