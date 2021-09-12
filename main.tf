@@ -44,7 +44,7 @@ locals {
 
 # Calculate hash of the container image source contents
 data "external" "hash" {
-  program = [coalesce(var.hash_script, "${path.module}/scripts/hash.bash"), var.source_path]
+  program = [coalesce(var.hash_script, "${path.module}/scripts/hash.bash"), var.image_source_path]
 }
 
 resource "aws_ecr_repository" "this" {
@@ -69,7 +69,7 @@ resource "null_resource" "push" {
   }
 
   provisioner "local-exec" {
-    command     = "${coalesce(var.push_script, "${path.module}/scripts/push.bash")} ${var.source_path} ${aws_ecr_repository.this.repository_url} ${var.image_default_tag} ${local.hash}"
+    command     = "${coalesce(var.push_script, "${path.module}/scripts/push.bash")} ${var.image_source_path} ${aws_ecr_repository.this.repository_url} ${var.image_default_tag} ${local.hash}"
     interpreter = ["bash", "-c"]
   }
 }

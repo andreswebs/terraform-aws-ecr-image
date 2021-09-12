@@ -51,7 +51,7 @@ variable "push_script" {
   default     = ""
 }
 
-variable "source_path" {
+variable "image_source_path" {
   type        = string
   description = "Path to the image source code"
 }
