@@ -10,6 +10,8 @@
 
 set -e
 
+cmd="${DOCKER_CMD:-docker}"
+
 SOURCE_PATH="${1}"
 REPOSITORY_URL="${2}"
 
@@ -20,11 +22,11 @@ TAGS="${TAGS:-latest}"
 
 REGION="$(echo "${REPOSITORY_URL}" | cut -d. -f4)"
 
-(cd "${SOURCE_PATH}" && docker build -t "${REPOSITORY_URL}" .)
+(cd "${SOURCE_PATH}" && $cmd build -t "${REPOSITORY_URL}" .)
 
-aws ecr get-login-password --region "${REGION}" | docker login --username AWS --password-stdin "${REPOSITORY_URL}"
+aws ecr get-login-password --region "${REGION}" | $cmd login --username AWS --password-stdin "${REPOSITORY_URL}"
 
 for t in ${TAGS}; do
-  docker tag "${REPOSITORY_URL}" "${REPOSITORY_URL}:${t}"
-  docker push "${REPOSITORY_URL}:${t}"
+  $cmd tag "${REPOSITORY_URL}" "${REPOSITORY_URL}:${t}"
+  $cmd push "${REPOSITORY_URL}:${t}"
 done

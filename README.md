@@ -27,6 +27,24 @@ module "ecr_image" {
 }
 ```
 
+## Scripts
+
+The [push.bash](scripts/push.bash) script uses `docker` by default to build and push the container image.
+
+It is possible to use a different command, by setting the `DOCKER_CMD` environment variable before running the `terraform` commands.
+
+Examples:
+
+```sh
+export DOCKER_CMD='podman'
+terraform apply
+```
+
+```sh
+export DOCKER_CMD=`lima nerdctl`
+terraform apply
+```
+
 
 
 ## Inputs
