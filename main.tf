@@ -16,7 +16,7 @@
 locals {
   hash = data.external.hash.result["hash"]
   repo_name = var.ecr_namespace != null && var.ecr_namespace != "" ? "${var.ecr_namespace}/${var.image_suffix}" : var.image_suffix
-  lifecycle_policy = var.lifecycle_policy != null && var.lifecycle_policy != "" ? var.lifecycle_policy : templatefile("${path.module}/tpl/ecr-lifecycle-policy.json.tpl", {
+  lifecycle_policy = var.lifecycle_policy != null && var.lifecycle_policy != "" ? var.lifecycle_policy : templatefile("${path.module}/tpl/ecr-lifecycle-policy.json.tftpl", {
     image_tag = var.image_default_tag
   })  
 }
