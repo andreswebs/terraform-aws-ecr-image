@@ -13,27 +13,6 @@
 * - `md5sum`
 */
 
-terraform {
-  required_providers {
-
-    aws = {
-      source  = "hashicorp/aws"
-      version = ">= 3.46.0"
-    }
-
-    external = {
-      source  = "hashicorp/external"
-      version = ">= 2.1.0"
-    }
-
-    null = {
-      source  = "hashicorp/null"
-      version = ">= 3.1.0"
-    }
-
-  }
-}
-
 locals {
   hash = data.external.hash.result["hash"]
   repo_name = var.ecr_namespace != null && var.ecr_namespace != "" ? "${var.ecr_namespace}/${var.image_suffix}" : var.image_suffix
