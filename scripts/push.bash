@@ -8,7 +8,9 @@
 # ./push.bash ../src 123456789012.dkr.ecr.us-west-1.amazonaws.com/optional-namespace/hello-world latest [another-tag] ... [tag-n]
 #
 
-set -e
+set -o errexit
+set -o pipefail
+set -o nounset
 
 cmd="${DOCKER_CMD:-docker}"
 

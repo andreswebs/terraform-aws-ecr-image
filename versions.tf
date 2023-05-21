@@ -3,17 +3,17 @@ terraform {
 
     aws = {
       source  = "hashicorp/aws"
-      version = ">= 3.46.0"
+      version = "~> 4.50"
     }
 
     external = {
       source  = "hashicorp/external"
-      version = ">= 2.1.0"
+      version = "~> 2.3"
     }
 
     null = {
       source  = "hashicorp/null"
-      version = ">= 3.1.0"
+      version = "~> 3.2"
     }
 
   }

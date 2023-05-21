@@ -1,11 +1,11 @@
 # terraform-aws-ecr-image
 
-[//]: # (BEGIN_TF_DOCS)
 Creates an ECR repository and pushes a container image using local bash scripts.
 
 ## Pre-requisites
 
-The following programs must be available on the `PATH` to be able to run the local scripts:
+The following programs must be available on the `PATH` to be able to run the
+local scripts:
 
 - `bash`
 - `docker`
@@ -13,6 +13,9 @@ The following programs must be available on the `PATH` to be able to run the loc
 - `find`
 - `sort`
 - `md5sum`
+
+[//]: # (BEGIN_TF_DOCS)
+
 
 ## Usage
 
@@ -78,17 +81,17 @@ No modules.
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 3.46.0 |
-| <a name="provider_external"></a> [external](#provider\_external) | >= 2.1.0 |
-| <a name="provider_null"></a> [null](#provider\_null) | >= 3.1.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 4.50 |
+| <a name="provider_external"></a> [external](#provider\_external) | ~> 2.3 |
+| <a name="provider_null"></a> [null](#provider\_null) | ~> 3.2 |
 
 ## Requirements
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 3.46.0 |
-| <a name="requirement_external"></a> [external](#requirement\_external) | >= 2.1.0 |
-| <a name="requirement_null"></a> [null](#requirement\_null) | >= 3.1.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 4.50 |
+| <a name="requirement_external"></a> [external](#requirement\_external) | ~> 2.3 |
+| <a name="requirement_null"></a> [null](#requirement\_null) | ~> 3.2 |
 
 ## Resources
 
@@ -101,16 +104,13 @@ No modules.
 
 [//]: # (END_TF_DOCS)
 
-
 ## Authors
 
 **Andre Silva** - [@andreswebs](https://github.com/andreswebs)
 
-
 ## License
 
 This project is licensed under the [Unlicense](UNLICENSE.md).
-
 
 ## Acknowledgements
 

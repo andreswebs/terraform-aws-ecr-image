@@ -1,24 +1,9 @@
-/**
-* Creates an ECR repository and pushes a container image using local bash scripts.
-*
-* ## Pre-requisites
-*
-* The following programs must be available on the `PATH` to be able to run the local scripts:
-* 
-* - `bash`
-* - `docker`
-* - `aws`
-* - `find`
-* - `sort`
-* - `md5sum`
-*/
-
 locals {
   hash = data.external.hash.result["hash"]
   repo_name = var.ecr_namespace != null && var.ecr_namespace != "" ? "${var.ecr_namespace}/${var.image_suffix}" : var.image_suffix
   lifecycle_policy = var.lifecycle_policy != null && var.lifecycle_policy != "" ? var.lifecycle_policy : templatefile("${path.module}/tpl/ecr-lifecycle-policy.json.tftpl", {
     image_tag = var.image_default_tag
-  })  
+  })
 }
 
 # Calculate hash of the container image source contents

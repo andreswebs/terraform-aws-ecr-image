@@ -7,7 +7,9 @@
 # ./hash.bash .
 #
 
-set -e
+set -o errexit
+set -o pipefail
+set -o nounset
 
 SOURCE_PATH="${1:-.}"
 
