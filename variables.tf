@@ -16,12 +16,12 @@ variable "image_default_tag" {
 }
 
 variable "image_tag_mutability" {
-  type    = string
-  default = "MUTABLE"
+  type        = string
+  default     = "MUTABLE"
   description = "Image tag immutability. Must be one of MUTABLE or IMMUTABLE"
 
   validation {
-    condition = can(regex("^MUTABLE|IMMUTABLE$", var.image_tag_mutability))
+    condition     = can(regex("^MUTABLE|IMMUTABLE$", var.image_tag_mutability))
     error_message = "Must be one of MUTABLE or IMMUTABLE."
   }
 
@@ -57,7 +57,7 @@ variable "image_source_path" {
 }
 
 variable "image_force_delete" {
-  type = bool
-  default = false
-  descrition = "(Optional) Force delete image?"
+  type        = bool
+  description = "(Optional) Force delete image?"
+  default     = false
 }

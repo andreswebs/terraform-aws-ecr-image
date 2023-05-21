@@ -57,7 +57,7 @@ terraform apply
 | <a name="input_ecr_namespace"></a> [ecr\_namespace](#input\_ecr\_namespace) | (Optional) A namespace prefixed to the ECR repository name, e.g. 'my-namespace' in my-namespace/my-repo | `string` | `null` | no |
 | <a name="input_hash_script"></a> [hash\_script](#input\_hash\_script) | (Optional) Path to a custom script to generate a hash of source contents | `string` | `""` | no |
 | <a name="input_image_default_tag"></a> [image\_default\_tag](#input\_image\_default\_tag) | Default tag to use for the container image | `string` | `"latest"` | no |
-| <a name="input_image_force_delete"></a> [image\_force\_delete](#input\_image\_force\_delete) | n/a | `bool` | `false` | no |
+| <a name="input_image_force_delete"></a> [image\_force\_delete](#input\_image\_force\_delete) | (Optional) Force delete image? | `bool` | `false` | no |
 | <a name="input_image_source_path"></a> [image\_source\_path](#input\_image\_source\_path) | Path to the image source code | `string` | n/a | yes |
 | <a name="input_image_suffix"></a> [image\_suffix](#input\_image\_suffix) | Suffix used to name the container image, e.g. 'my-repo' in my-namespace/my-repo | `string` | n/a | yes |
 | <a name="input_image_tag_mutability"></a> [image\_tag\_mutability](#input\_image\_tag\_mutability) | Image tag immutability. Must be one of MUTABLE or IMMUTABLE | `string` | `"MUTABLE"` | no |
