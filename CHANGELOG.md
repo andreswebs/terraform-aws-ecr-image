@@ -10,6 +10,8 @@ and this project adheres to
 
 - Upgrade provider versions
 
+## [1.2.0] -
+
 ## [1.1.0] - 2021-09-12
 
 ### Added
