@@ -19,7 +19,7 @@ variable "image_tag_mutability" {
   type    = string
   default = "MUTABLE"
   description = "Image tag immutability. Must be one of MUTABLE or IMMUTABLE"
-  
+
   validation {
     condition = can(regex("^MUTABLE|IMMUTABLE$", var.image_tag_mutability))
     error_message = "Must be one of MUTABLE or IMMUTABLE."
@@ -54,4 +54,10 @@ variable "push_script" {
 variable "image_source_path" {
   type        = string
   description = "Path to the image source code"
+}
+
+variable "image_force_delete" {
+  type = bool
+  default = false
+  descrition = "(Optional) Force delete image?"
 }
