@@ -14,6 +14,8 @@ set -o nounset
 
 cmd="${DOCKER_CMD:-docker}"
 
+PLATFORM="${PLATFORM:-linux/amd64}"
+
 SOURCE_PATH="${1}"
 REPOSITORY_URL="${2}"
 
@@ -24,7 +26,7 @@ TAGS="${TAGS:-latest}"
 
 REGION="$(echo "${REPOSITORY_URL}" | cut -d. -f4)"
 
-(cd "${SOURCE_PATH}" && $cmd build -t "${REPOSITORY_URL}" .)
+(cd "${SOURCE_PATH}" && $cmd build --platform "${PLATFORM}" --tag "${REPOSITORY_URL}" .)
 
 aws ecr get-login-password --region "${REGION}" | $cmd login --username AWS --password-stdin "${REPOSITORY_URL}"
 
